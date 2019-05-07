@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Album } from "../album.model";
 
 @Component({
   selector: 'app-dettagli-album',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DettagliAlbumComponent implements OnInit {
 
+  @Input() Album : Album;
   constructor() { }
 
   ngOnInit() {

@@ -1,5 +1,6 @@
 <div *ngFor="let art of MuData">
-  <form>
-    <p (click)="test()">{{art.title}} - {{art.durata}} - {{art.data_uscita}}</p>
+  <form (click)="onClick(P)">
+    {{art.title}} - {{art.durata}} - {{art.data_uscita}}
   </form>
 </div>
+<app-dettagli-album [MMM] = "selectedP"></app-dettagli-album>

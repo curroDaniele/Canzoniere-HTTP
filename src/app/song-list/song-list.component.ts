@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Canzoni } from './song-list.module';
+import { Album } from "../album.model";
 
 @Component({
   selector: 'app-song-list',
@@ -9,6 +10,9 @@ import { Canzoni } from './song-list.module';
   styleUrls: ['./song-list.component.css']
 })
 export class SongListComponent implements OnInit {
+  @Input() MMM : Album[];
+  selectedP : Album;
+
    data: Object;
    loading: boolean;
    o :Observable<Object>;
@@ -39,4 +43,10 @@ makeTypedRequest() : void
 ngOnInit(){
   this.makeTypedRequest();
   }
+
+onClick(p : Album)
+  {
+    this.selectedP = p;
+  }
+
 }
